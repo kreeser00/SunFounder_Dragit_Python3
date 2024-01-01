@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.urls import path
 from django.contrib import admin
-from picar_v import views as picar_v_views
+from picar_v.views import run as picar_v_run
 from raspberry_pi import views as raspberry_pi_views
 from picar_s import views as picar_s_views
 from pismart_ import views as pismart_views
@@ -28,7 +28,7 @@ urlpatterns = [
     path(r'^$', home),
     path(r'^SnapCloud$', SnapCloud),
     path(r'^SnapCloudSignUp/$', SnapCloud),
-    path(r'^run/picar-v/$', picar_v_views.run),
+    path(r'^run/picar-v/$', picar_v_run),
     path(r'^run/raspberry_pi/$', raspberry_pi_views.run),
     path(r'^run/picar-s/$', picar_s_views.run),
     path(r'^run/pismart/$', pismart_views.run),
