@@ -16,7 +16,7 @@ blob_y = 0
 blob_r = 0
 
 try:
-    config_dir = '/opt/SunFounder_Dragit/Dragit/config'
+    config_dir = '/opt/SunFounder_Dragit_Python3/Dragit/config'
     os.system('touch %s' % config_dir)
 
     # import image_process
