@@ -1,9 +1,9 @@
 import sys
-import libs.picar.front_wheels
-import libs.picar.back_wheels
-from libs.picar.SunFounder_PCA9685 import Servo
-import libs.picar.PCF8591
-from libs.picar.SunFounder_PCA9685 import PCA9685
+import Dragit.libs.picar.front_wheels
+import Dragit.libs.picar.back_wheels
+from Dragit.libs.picar.SunFounder_PCA9685 import Servo
+import Dragit.libs.picar.PCF8591
+from Dragit.libs.picar.SunFounder_PCA9685 import PCA9685
 
 
 def main():

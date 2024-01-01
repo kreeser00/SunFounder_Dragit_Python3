@@ -11,8 +11,8 @@
 *               Cavon    2016-11-04    fix for submodules
 **********************************************************************
 """
-from libs.picar.SunFounder_PCA9685 import Servo
-from libs.picar.filedb import fileDB
+from Dragit.libs.picar.SunFounder_PCA9685 import Servo
+from Dragit.libs.picar.filedb import fileDB
 
 
 class Front_Wheels(object):

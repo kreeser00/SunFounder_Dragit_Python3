@@ -12,9 +12,9 @@
 **********************************************************************
 """
 
-from libs.picar.SunFounder_TB6612 import TB6612
-from libs.picar.SunFounder_PCA9685 import PCA9685
-from libs.picar.filedb import fileDB
+from Dragit.libs.picar.SunFounder_TB6612 import TB6612
+from Dragit.libs.picar.SunFounder_PCA9685 import PCA9685
+from Dragit.libs.picar.filedb import fileDB
 
 
 class Back_Wheels(object):
