@@ -4,20 +4,19 @@ from django.http import HttpResponse
 from Dragit.libs.modules.Ultrasonic_Avoidance import Ultrasonic_Avoidance
 from Dragit.libs.modules.Light_Follower import Light_Follower
 from Dragit.libs.modules.Line_Follower import Line_Follower
-
-from Dragit.libs.picar.SunFounder_PCA9685.Servo import Servo
-from Dragit.libs.picar.SunFounder_PCA9685.PCA9685 import PWM
-from Dragit.libs.picar import front_wheels
-from Dragit.libs.picar import back_wheels
-from Dragit.libs.picar import ADC
-import Dragit.libs.picar as picar
+from picar.SunFounder_PCA9685.Servo import Servo
+from picar.SunFounder_PCA9685.PCA9685 import PWM
+from picar import front_wheels
+from picar import back_wheels
+from picar import ADC
+import picar
 import time
 import RPi.GPIO as GPIO
 import os
 
 try:
-    config_dir = '/opt/SunFounder_Dragit/Dragit/config'
-    os.system('touch %s'%config_dir)
+    config_dir = '/opt/SunFounder_Dragit_Python3/Dragit/config'
+    os.system('touch %s' % config_dir)
 
     adc  = ADC()
 
