@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.urls import path
 from django.contrib import admin
-from picar_v.views import run as picar_v_run
+from Dragit.picar_v.views import run as picar_v_run
 from raspberry_pi import views as raspberry_pi_views
 from picar_s import views as picar_s_views
 from pismart_ import views as pismart_views
