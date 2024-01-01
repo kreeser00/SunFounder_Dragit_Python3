@@ -12,7 +12,7 @@
 **********************************************************************
 """
 
-from libs.picar.SunFounder_PCA9685.PCA9685 import PWM
+from Dragit.libs.picar.SunFounder_PCA9685.PCA9685 import PWM
 
 
 class Servo(object):
