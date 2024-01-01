@@ -9,7 +9,7 @@ import time
 import RPi.GPIO as GPIO
 import os
 import stream
-from Dragit.picar_v.image_process import SCREEN_WIDTH, SCREEN_HIGHT, find_blob
+# from Dragit.picar_v.image_process import SCREEN_WIDTH, SCREEN_HIGHT, find_blob
 
 blob_x = 0
 blob_y = 0
@@ -233,27 +233,27 @@ def cali_tilt_servo(offset):
     print("[PiCar-V] Calibrate Tilt %s" % (value))
 
 
-def find_blob():
-    print("Find red blob begin")
-    (blob_x, blob_y), blob_r = find_blob()
-    if  blob_r == -1:
-        blob_x = (SCREEN_WIDTH/2)
-        blob_y = (SCREEN_HIGHT/2)
-    blob_x = -((SCREEN_WIDTH/2) - blob_x)
-    blob_y = (SCREEN_HIGHT/2) - blob_y
-    print("x: %s, y: %s, r: %s" % (blob_x, blob_y, blob_r))
-    print("[PiCar-V] Find red blob")
-
-
-def get_blob(state):
-    if state == "x":
-        value = blob_x
-    elif state == "y":
-        value = blob_y
-    elif state == "r":
-        value = blob_r
-    print("[PiCar-V] Blob %s: %d" % (state, value))
-    return value
+# def find_blob():
+#     print("Find red blob begin")
+#     (blob_x, blob_y), blob_r = find_blob()
+#     if  blob_r == -1:
+#         blob_x = (SCREEN_WIDTH/2)
+#         blob_y = (SCREEN_HIGHT/2)
+#     blob_x = -((SCREEN_WIDTH/2) - blob_x)
+#     blob_y = (SCREEN_HIGHT/2) - blob_y
+#     print("x: %s, y: %s, r: %s" % (blob_x, blob_y, blob_r))
+#     print("[PiCar-V] Find red blob")
+#
+#
+# def get_blob(state):
+#     if state == "x":
+#         value = blob_x
+#     elif state == "y":
+#         value = blob_y
+#     elif state == "r":
+#         value = blob_r
+#     print("[PiCar-V] Blob %s: %d" % (state, value))
+#     return value
 
 
 # Stop
@@ -369,12 +369,12 @@ def run_request(request):
             result = 'calibration member error: %s' % member
 
     # ================ Ball track =================
-    elif action == "find_blob":
-        find_blob()
+    # elif action == "find_blob":
+    #     find_blob()
 
-    elif action == "get_blob":
-        state = value0
-        get_blob(state)
+    # elif action == "get_blob":
+    #     state = value0
+    #     get_blob(state)
 
     elif action == "device_status":
         result = device_status()
