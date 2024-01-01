@@ -68,8 +68,8 @@ class BCM_GPIO(object):
             self.pwm  = -1   # remove pwm object
             self.mode = self._mode_[0]
             GPIO.cleanup(self.chn)
-        except Exception, e:
-            #print Exception,":",e
+        except Exception as e:
+            print("Exception: ", e)
             pass
 
     def get_status(self):
