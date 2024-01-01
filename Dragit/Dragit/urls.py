@@ -15,13 +15,13 @@ Including another URLconf
 """
 from django.urls import path
 from django.contrib import admin
-from Dragit.picar_v import views as picar_v_views
-from Dragit.raspberry_pi import views as raspberry_pi_views
-from Dragit.picar_s import views as picar_s_views
-from Dragit.pismart_ import views as pismart_views
-from Dragit.modules import views as modules_views
-from Dragit.piplus import views as piplus_views
-from Dragit.views import home, SnapCloud
+from picar_v import views as picar_v_views
+from raspberry_pi import views as raspberry_pi_views
+from picar_s import views as picar_s_views
+from pismart_ import views as pismart_views
+from modules import views as modules_views
+from piplus import views as piplus_views
+from views import home, SnapCloud
 
 urlpatterns = [
     path(r'^admin/', admin.site.urls),
