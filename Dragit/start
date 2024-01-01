@@ -2,5 +2,5 @@
 
 # Run server listen to any IP address and port 8000
 echo "Server running"
-cd /opt/SunFounder_Dragit/Dragit/
+cd /opt/SunFounder_Dragit_Python3/Dragit/
 python dragit.py runserver 0.0.0.0:8000

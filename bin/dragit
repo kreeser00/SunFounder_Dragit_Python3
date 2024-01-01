@@ -17,7 +17,7 @@ case "$1" in
         echo "Starting Dragit"
         sudo modprobe w1-gpio
         sudo modprobe w1-therm
-        /opt/SunFounder_Dragit/Dragit/start &
+        /opt/SunFounder_Dragit_Python3/Dragit/start &
         ;;
     stop)
         echo "Stopping Dragit"
