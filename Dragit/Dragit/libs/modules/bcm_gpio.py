@@ -4,6 +4,7 @@ import RPi.GPIO as GPIO
 import threading
 import time
 
+
 class BCM_GPIO(object):
     """docstring for rpi_pin"""
     INPUT  = 0
@@ -28,7 +29,7 @@ class BCM_GPIO(object):
         GPIO.setup(self.chn, GPIO.IN)
         self.mode  = self._mode_[self.INPUT]
         value = GPIO.input(self.chn)
-        print ("GPIO%s input value:%s"%(self.chn, value))
+        print("GPIO%s input value:%s"%(self.chn, value))
         return value
 
     def output(self, value):
@@ -60,7 +61,7 @@ class BCM_GPIO(object):
         if freq != None:        # pwm_output(freq=xx)
             self.freq = freq
             self.pwm.set_frequency(self.freq)
-        print ("DC = %s, freq = %s"%(self.dc, self.freq))
+        print("DC = %s, freq = %s"%(self.dc, self.freq))
 
     def try_stop_pwm(self):
         try:
@@ -73,7 +74,7 @@ class BCM_GPIO(object):
             pass
 
     def get_status(self):
-        print ("chn: %s, \n ├─mode: %s, \n ├─freq: %s, \n └─dc: %s"\
+        print("chn: %s, \n ├─mode: %s, \n ├─freq: %s, \n └─dc: %s"\
             %(self.chn, self.mode, self.freq, self.dc))
         return (self.chn, self.mode, self.freq, self.dc)
 
@@ -98,8 +99,8 @@ class BCM_GPIO(object):
             self.pwm_status = 1
             try:
                 while self.pwm_status:
-                    #time.sleep(0.00000000000001)
-                    #print("pwm thread running")
+                    # time.sleep(0.00000000000001)
+                    # print("pwm thread running")
                     GPIO.output(self.chn, 1)
                     time.sleep(self.on_time)
                     GPIO.output(self.chn, 0)
@@ -133,15 +134,17 @@ def test_input(chn):
     print("[Class Test] Test BCM_GPIO input")
     pin17 = BCM_GPIO(chn)
     a = pin17.input()
-    print "input value", a
+    print("input value", a)
     pin17.get_status()
+
 
 def test_output(chn, value):
     print("[Class Test] Test BCM_GPIO output")
     pin17 = BCM_GPIO(chn)
     pin17.output(value)
-    print "output value:", value
+    print("output value:", value)
     pin17.get_status()
+
 
 def test_pwm_freq(chn):
     print("[Class Test] Test BCM_GPIO pwm freq")
@@ -158,6 +161,7 @@ def test_pwm_freq(chn):
     pin17.get_status()
     pin17.end()
 
+
 def test_pwm_dc(chn):
     print("[Class Test] Test BCM_GPIO pwm dc")
     pin17 = BCM_GPIO(chn)
@@ -170,15 +174,16 @@ def test_pwm_dc(chn):
     pin17.get_status()
     pin17.end()
 
+
 if __name__ == '__main__':
-    #try:
-    #    test_input(17)
-    #for x in xrange(1,5):
-    #    test_output(17, 'HIGH')
-    #    time.sleep(1)
-    #    test_output(17, 'LOW')
-    #    time.sleep(1)
+    # try:
+    #     test_input(17)
+    # for x in range(1,5):
+    #     test_output(17, 'HIGH')
+    #     time.sleep(1)
+    #     test_output(17, 'LOW')
+    #     time.sleep(1)
     test_pwm_freq(17)
-    #test_pwm_dc(20)
-    #test_input(17)
-    #except KeyboardInterrupt:
+    # test_pwm_dc(20)
+    # test_input(17)
+    # except KeyboardInterrupt:
