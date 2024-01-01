@@ -1,10 +1,10 @@
 from django.http import HttpResponse
-from Dragit.libs.picar.SunFounder_PCA9685.Servo import Servo
-from Dragit.libs.picar.SunFounder_PCA9685.PCA9685 import PWM
-from Dragit.libs.picar import front_wheels
-from Dragit.libs.picar import back_wheels
-from Dragit.libs.picar import ADC
-import Dragit.libs.picar as picar
+from picar.SunFounder_PCA9685.Servo import Servo
+from picar.SunFounder_PCA9685.PCA9685 import PWM
+from picar import front_wheels
+from picar import back_wheels
+from picar import ADC
+import picar
 import time
 import RPi.GPIO as GPIO
 import os
