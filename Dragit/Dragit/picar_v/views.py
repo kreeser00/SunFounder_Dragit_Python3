@@ -9,7 +9,7 @@ import time
 import RPi.GPIO as GPIO
 import os
 import stream
-import image_process
+from Dragit.picar_v.image_process import SCREEN_WIDTH, SCREEN_HIGHT, find_blob
 
 blob_x = 0
 blob_y = 0
@@ -114,7 +114,7 @@ def cam_turn(angle):
     elif angle == 'center':
         pass
     else:
-        print("angle not define: %s"  %  angle)
+        print("angle not define: %s" % angle)
     pan.write(pan_angle+90)
     tilt.write(tilt_angle+90)
 
@@ -235,12 +235,12 @@ def cali_tilt_servo(offset):
 
 def find_blob():
     print("Find red blob begin")
-    (blob_x, blob_y), blob_r = image_process.find_blob()
+    (blob_x, blob_y), blob_r = find_blob()
     if  blob_r == -1:
-        blob_x = (image_process.SCREEN_WIDTH/2)
-        blob_y = (image_process.SCREEN_HIGHT/2)
-    blob_x = -((image_process.SCREEN_WIDTH/2) - blob_x)
-    blob_y = (image_process.SCREEN_HIGHT/2) - blob_y
+        blob_x = (SCREEN_WIDTH/2)
+        blob_y = (SCREEN_HIGHT/2)
+    blob_x = -((SCREEN_WIDTH/2) - blob_x)
+    blob_y = (SCREEN_HIGHT/2) - blob_y
     print("x: %s, y: %s, r: %s" % (blob_x, blob_y, blob_r))
     print("[PiCar-V] Find red blob")
 
